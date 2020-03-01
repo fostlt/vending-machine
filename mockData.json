@@ -1,6 +1,32 @@
 {
-"products": [],
-
-"coins": []
-
+  "products": [
+    {
+      "product": "Pepsi",
+      "quantity": 10,
+      "maxQuantity": 10,
+      "cost": 1.5,
+      "id": "1A"
+    },
+    {
+      "product": "Flamin' Hot Cheetos",
+      "quantity": 10,
+      "maxQuantity": 10,
+      "cost": 1.5,
+      "id": "1B"
+    }
+  ],
+  "coins": [
+    {
+      "name": "quarter",
+      "amount": 0.25,
+      "quantity": 10,
+      "minQuantity": 10
+    },
+    {
+      "name": "loonie",
+      "amount": 1.0,
+      "quantity": 10,
+      "minQuantity": 10
+    }
+  ]
 }
