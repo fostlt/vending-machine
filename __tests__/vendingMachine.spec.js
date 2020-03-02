@@ -1,8 +1,8 @@
 const { VendingMachine } = require("../lib/VendingMachine");
 const inventory = require("../mockData.json");
 
+let vendingMachine;
 
-// Create a test for inventory
 describe("Vending Machine", () => {
   beforeEach(() => {
     vendingMachine = new VendingMachine(inventory);
@@ -51,7 +51,7 @@ describe("Vending Machine", () => {
           {
             name: "quarter",
             amount: 0.25,
-            quantity: 10,
+            quantity: 1,
             minQuantity: 10,
             id: 1
           },
@@ -71,6 +71,37 @@ describe("Vending Machine", () => {
           }
         ]
       });
+    });
+  });
+  /* end */
+
+  describe("Refills the change quantity", () => {
+    beforeEach(() => {
+    });
+    it("Changes the quantity of change", () => {
+      expect(vendingMachine.refillCoins()).toEqual([
+        {
+          name: "quarter",
+          amount: 0.25,
+          quantity: 10,
+          minQuantity: 10,
+          id: 1
+        },
+        {
+          name: "loonie",
+          amount: 1.0,
+          quantity: 10,
+          minQuantity: 10,
+          id: 2
+        },
+        {
+          name: "toonie",
+          amount: 2.0,
+          quantity: 10,
+          minQuantity: 10,
+          id: 3
+        }
+      ]);
     });
   });
 });
