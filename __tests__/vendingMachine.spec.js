@@ -151,10 +151,25 @@ describe("Vending Machine", () => {
   describe("Pick an Item", () => {
     beforeEach(() => {});
     it("The decided item will have the same string as...", () => {
-        /* Changes with item-picked value. Need to thing of better logic */
-      expect(vendingMachine.getProduct()).toContain([
-        "Flamin' Hot Cheetos"
-      ]);
+      /* Changes with item-picked value. Need to thing of better logic */
+      expect(vendingMachine.getProduct()).toContain(["Flamin' Hot Cheetos"]);
     });
   });
+
+  describe("The item bought", () => {
+    beforeEach(() => {});
+    it("Product picked", () => {
+      /* Changes with item-picked value. Need to think of better logic */
+      expect(vendingMachine.productPay()).toEqual("Dr.Pepper");
+    });
+  });
+
+//   describe("", () =>{
+//       beforeEach(()=> {})
+//       it("", () => {
+//           expect(vendingMachine.selectItem()).toEqual()
+//       });
+//   });
+
+
 });
