@@ -76,8 +76,7 @@ describe("Vending Machine", () => {
   /* end */
 
   describe("Refills the change quantity", () => {
-    beforeEach(() => {
-    });
+    beforeEach(() => {});
     it("Changes the quantity of change", () => {
       expect(vendingMachine.refillCoins()).toEqual([
         {
@@ -100,6 +99,51 @@ describe("Vending Machine", () => {
           quantity: 10,
           minQuantity: 10,
           id: 3
+        }
+      ]);
+    });
+  });
+
+  describe("Restocks the Inventory", () => {
+    beforeEach(() => {
+      vendingMachine.inventory.products[0].quantity = 0;
+    });
+    it("should change the values to full", () => {
+      expect(vendingMachine.refillInventory()).toEqual([
+        {
+          product: "Pepsi",
+          quantity: 10,
+          maxQuantity: 10,
+          cost: 1.5,
+          id: "A1"
+        },
+        {
+          product: "Flamin' Hot Cheetos",
+          quantity: 10,
+          maxQuantity: 10,
+          cost: 1.75,
+          id: "A2"
+        },
+        {
+          product: "Kit Kat",
+          quantity: 10,
+          maxQuantity: 10,
+          cost: 1.25,
+          id: "A3"
+        },
+        {
+          product: "Dr.Pepper",
+          quantity: 10,
+          maxQuantity: 10,
+          cost: 1.5,
+          id: "A4"
+        },
+        {
+          product: "Skittles",
+          quantity: 10,
+          maxQuantity: 10,
+          cost: 1,
+          id: "A5"
         }
       ]);
     });
